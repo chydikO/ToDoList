@@ -1,1 +1,4 @@
 https://github.com/creativetimofficial/material-dashboard-angular2
+
+$ npm install ngx-bootstrap bootstrap
+ng add @angular/material
