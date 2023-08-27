@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Task} from "./model/Task";
+import {DataHandlerService} from "./service/data-handler.service";
 
 @Component({
   selector: 'app-root',

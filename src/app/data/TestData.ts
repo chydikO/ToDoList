@@ -190,6 +190,5 @@ export class TestData {
             date: new Date('2019-03-17')
 
         }
-
     ];
 }
