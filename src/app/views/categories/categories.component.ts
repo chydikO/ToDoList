@@ -25,6 +25,6 @@ export class CategoriesComponent implements OnInit {
     }
 
     showTasksByCategory(category: Category) {
-        this.dataHandler.getTasksByCategory(category);
+        this.dataHandler.fillTasksByCategory(category);
     }
 }
