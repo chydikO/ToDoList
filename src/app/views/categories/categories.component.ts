@@ -20,7 +20,8 @@ export class CategoriesComponent implements OnInit {
 
     // метод вызывается автоматически после инициализации компонента
     ngOnInit() {
-        this.categories = this.dataHandler.getCategories();
+        // this.categories = this.dataHandler.getCategories();
+      this.dataHandler.categoriesSubject.subscribe(categories => this.categories = categories);
         console.log(this.categories);
     }
 
