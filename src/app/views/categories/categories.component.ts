@@ -5,27 +5,29 @@ import {Priority} from "../../model/Priority";
 import {Task} from "../../model/Task";
 
 @Component({
-    selector: 'app-categories',
-    templateUrl: './categories.component.html',
-    styleUrls: ['./categories.component.css']
+  selector: 'app-categories',
+  templateUrl: './categories.component.html',
+  styleUrls: ['./categories.component.css']
 })
 
 export class CategoriesComponent implements OnInit {
 
-    categories: Category[];
+  categories: Category[];
+  selectedCategory?: Category;
 
-    constructor(private dataHandler: DataHandlerService) {
-        this.categories = [];
-    }
+  constructor(private dataHandler: DataHandlerService) {
+    this.categories = [];
+  }
 
-    // метод вызывается автоматически после инициализации компонента
-    ngOnInit() {
-        // this.categories = this.dataHandler.getCategories();
-      this.dataHandler.categoriesSubject.subscribe(categories => this.categories = categories);
-        console.log(this.categories);
-    }
+  // метод вызывается автоматически после инициализации компонента
+  ngOnInit() {
+    // this.categories = this.dataHandler.getCategories();
+    this.dataHandler.categoriesSubject.subscribe(categories => this.categories = categories);
+    console.log(this.categories);
+  }
 
-    showTasksByCategory(category: Category) {
-        this.dataHandler.fillTasksByCategory(category);
-    }
+  showTasksByCategory(category: Category) {
+    this.selectedCategory = category;
+    this.dataHandler.fillTasksByCategory(category);
+  }
 }

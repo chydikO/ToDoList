@@ -6,21 +6,24 @@
     <div class="card-body table-responsive">
         <table class="table table-hover">
             <thead class="text-warning">
-            <th>ID</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Priority</th>
-            <th>State</th>
-            <th>Date</th>
+              <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Name</th>
+                  <th scope="col">Category</th>
+                  <th scope="col">Priority</th>
+                  <th scope="col">Date</th>
+                  <th scope="col">State</th>
+              </tr>
             </thead>
             <tbody>
-            <tr *ngFor="let task of tasks">
-                <td>{{task.id}}</td>
+            <tr *ngFor="let task of tasks; let i = index;">
+                <td>{{i + 1}}</td>
                 <td>{{task.title}}</td>
                 <td>{{task.category?.title}}</td>
                 <td>{{task.priority?.title}}</td>
+                <td>{{ task.date?.toDateString() | date: 'short' : 'ru' }}
                 <td>{{task.completed.valueOf()}}</td>
-                <td>{{ task.date?.toDateString() | date: 'longDate' : 'ru' }}</td>                          </tr>
+            </tr>
             </tbody>
         </table>
     </div>
