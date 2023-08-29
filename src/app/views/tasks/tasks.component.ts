@@ -18,4 +18,8 @@ export class TasksComponent   implements OnInit {
     this.dataHandler.taskSubject.subscribe(tasks => this.tasks = tasks);
     console.log(this.tasks);
   }
+
+  toggleTaskCompleted(task: Task) {
+    task.completed = !task.completed;
+  }
 }
